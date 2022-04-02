@@ -1,17 +1,15 @@
 package com.android.gymtogether.SplashScreen;
 
-import android.content.Intent;
-import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import com.android.gymtogether.MainActivity;
+import com.android.gymtogether.LoginGoogleActivity.LoginGoogleActivity;
 import com.android.gymtogether.R;
-import com.android.gymtogether.SplashScreen.Presenter.SplashPresenter;
-import com.android.gymtogether.SplashScreen.Presenter.SplashPresenterImpl;
-import com.android.gymtogether.SplashScreen.View.SplashView;
+import com.android.gymtogether.SplashScreen.presenter.SplashPresenter;
+import com.android.gymtogether.SplashScreen.presenter.SplashPresenterImpl;
+import com.android.gymtogether.SplashScreen.view.SplashView;
 
 import java.util.Objects;
 
@@ -26,8 +24,10 @@ public class SplashActivity extends AppCompatActivity implements SplashView {
         setContentView(R.layout.activity_splash);
 
         splashPresenter = new SplashPresenterImpl(this);
-        splashPresenter.checkConnection(this);
-        splashPresenter.waitToChange(this, MainActivity.class);
+        boolean connectionStatus = splashPresenter.checkConnection(this);
+        if(connectionStatus){
+            splashPresenter.waitToChange(this, LoginGoogleActivity.class);
+        }
     }
 
 

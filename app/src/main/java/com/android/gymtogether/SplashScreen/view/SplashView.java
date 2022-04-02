@@ -1,4 +1,4 @@
-package com.android.gymtogether.SplashScreen.View;
+package com.android.gymtogether.SplashScreen.view;
 
 public interface SplashView {
 
