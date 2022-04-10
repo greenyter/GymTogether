@@ -43,7 +43,7 @@ public class LoginGooglePresenterImpl implements  LoginGooglePresenter{
 
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            user.setUserNameDisplay(account.getDisplayName());
+            user.setName(account.getDisplayName());
             user.setEmail(account.getEmail());
             user.setPhotoUrl(Objects.requireNonNull(account.getPhotoUrl()).toString());
 

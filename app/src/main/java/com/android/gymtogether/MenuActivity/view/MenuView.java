@@ -8,4 +8,5 @@ public interface MenuView {
     void setImageView(Bitmap photoBitmap);
     void getImageFailed();
     void getConnectionFailed();
+    void setText(String userDetails);
 }

@@ -3,6 +3,7 @@ package com.android.gymtogether.MenuActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,7 +26,8 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
     private CircleImageView profileImage;
     private MenuPresenter menuPresenter;
     private GoogleSignInClient mGoogleSignInClient;
-    Intent intent;
+    private Intent intent;
+    private TextView details;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +37,11 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
         menuPresenter = new MenuPresenterImpl(this);
         initControllers();
 
+        String userDetails = String.format("Name: %s\nemail: %s",
+                                            user.getName(),user.getEmail());
+
         menuPresenter.convertUriToImage(user.getPhotoUrl());
+        menuPresenter.getDetailsUser(userDetails);
 
     }
 
@@ -48,20 +54,22 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
                     .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                             a();
+                             backToPrevAct();
                         }
 
                     });
 
     }
 
-    public void a(){
+
+    private void backToPrevAct(){
         intent = new Intent(this,LoginGoogleActivity.class);
         startActivity(intent);
     }
 
     private void initControllers(){
         profileImage = findViewById(R.id.profile_image);
+        details = findViewById(R.id.userDetails);
     }
 
     @Override
@@ -78,6 +86,11 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
     public void getConnectionFailed() {
         Toast.makeText(this,"failedConnection",Toast.LENGTH_SHORT).show();
     }
-    
-    
+
+    @Override
+    public void setText(String userDetails) {
+        details.setText(userDetails);
+    }
+
+
 }

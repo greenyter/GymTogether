@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.StrictMode;
 import android.util.Log;
+import com.android.gymtogether.LoginGoogleActivity.model.User;
 import com.android.gymtogether.MenuActivity.view.MenuView;
 import com.squareup.picasso.Picasso;
 import org.json.JSONObject;
@@ -36,4 +37,17 @@ public class MenuPresenterImpl implements MenuPresenter{
         }
 
     }
+
+    @Override
+    public void getDetailsUser(String details) {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        Log.d("profile",details);
+        try {
+            menuView.setText(details);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
