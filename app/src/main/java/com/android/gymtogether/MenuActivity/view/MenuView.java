@@ -9,4 +9,5 @@ public interface MenuView {
     void getImageFailed();
     void getConnectionFailed();
     void setText(String userDetails);
+    void goToAddTrainingActivity();
 }

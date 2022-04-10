@@ -92,5 +92,10 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
         details.setText(userDetails);
     }
 
+    @Override
+    public void goToAddTrainingActivity() {
+        
+    }
+
 
 }
