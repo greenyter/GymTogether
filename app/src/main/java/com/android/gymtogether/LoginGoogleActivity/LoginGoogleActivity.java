@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.android.gymtogether.ExercicesActivity.ExercicesActivity;
 import com.android.gymtogether.LoginGoogleActivity.model.User;
 import com.android.gymtogether.LoginGoogleActivity.presenter.LoginGooglePresenter;
 import com.android.gymtogether.LoginGoogleActivity.presenter.LoginGooglePresenterImpl;
@@ -58,5 +59,11 @@ public class LoginGoogleActivity extends AppCompatActivity implements LoginGoogl
         Intent intent = new Intent(this, MenuActivity.class);
         intent.putExtra("userDetails", (Serializable) user);
        startActivity(intent);
+    }
+
+    //testowo
+    public void launchTrainning(View v){
+        Intent i = new Intent(this, ExercicesActivity.class);
+        startActivity(i);
     }
 }
