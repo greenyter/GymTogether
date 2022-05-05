@@ -15,6 +15,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="284dp" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.4"
+            android:onClick="ShowPopUp"
     />
     <Button
             android:text="Cable crossover"
@@ -23,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="160dp" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.4"
-    />
+            android:onClick="ShowPopUp"/>
     <Button
             android:text="PushUp"
             android:layout_width="416dp"
@@ -31,5 +32,5 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="38dp" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.51"
-    />
+            android:onClick="ShowPopUp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
