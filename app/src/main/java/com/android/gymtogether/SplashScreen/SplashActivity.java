@@ -1,10 +1,10 @@
 package com.android.gymtogether.SplashScreen;
 
+import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import com.android.gymtogether.LoginGoogleActivity.LoginGoogleActivity;
 import com.android.gymtogether.R;
 import com.android.gymtogether.SplashScreen.presenter.SplashPresenter;

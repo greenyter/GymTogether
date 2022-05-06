@@ -1,8 +1,5 @@
 package com.android.gymtogether.LoginGoogleActivity.model;
 
-import android.net.Uri;
-import android.os.Parcel;
-import android.os.Parcelable;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

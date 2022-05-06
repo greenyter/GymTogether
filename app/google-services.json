@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "657729605325",
+    "firebase_url": "https://gymtogether-1647726843009-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "gymtogether-1647726843009",
+    "storage_bucket": "gymtogether-1647726843009.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657729605325:android:03242240e3287fce2e6384",
+        "android_client_info": {
+          "package_name": "com.android.gymtogether"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657729605325-aoiar4b0lavfqe53flbthnpkvo31i3lj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAITDPbj3IeuytIgwM2ui3yjTLOfITMgwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657729605325-aoiar4b0lavfqe53flbthnpkvo31i3lj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
