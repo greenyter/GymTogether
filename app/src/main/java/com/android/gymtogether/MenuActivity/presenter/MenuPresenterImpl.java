@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.os.StrictMode;
 import android.util.Log;
 import com.android.gymtogether.MenuActivity.view.MenuView;
+import com.android.gymtogether.tool.ImageConverter;
 
 import java.net.URL;
 
@@ -17,16 +18,8 @@ public class MenuPresenterImpl implements MenuPresenter{
     }
     @Override
     public void convertUriToImage(String url) {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        Log.d("profile",url);
-        try {
-            URL urlString = new URL(url);
-            Bitmap bmp = BitmapFactory.decodeStream(urlString.openConnection().getInputStream());
-            menuView.setImageView(bmp);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Bitmap bitmap = ImageConverter.convertFromUrlToBmp(url);
+        menuView.setImageView(bitmap);
 
     }
 

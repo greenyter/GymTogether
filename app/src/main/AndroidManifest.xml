@@ -14,6 +14,8 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.GymTogether"
             android:usesCleartextTraffic="true">
+        <activity android:name=".UserListActivity.UserListActivity">
+        </activity>
         <activity android:name=".RecommendExercisesActivity.RecommendExercisesActivity">
         </activity>
         <activity android:name=".MenuActivity.MenuActivity">
