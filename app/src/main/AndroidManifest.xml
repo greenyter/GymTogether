@@ -16,10 +16,6 @@
             android:usesCleartextTraffic="true">
         <activity android:name=".ExercisesActivity.PopUpAddExerciseActivity">
         </activity>
-        <activity android:name=".ExercisesActivity.ChestExercisesActivity">
-        </activity>
-        <activity android:name=".ExercisesActivity.HeadExercisesActivity">
-        </activity>
         <activity android:name=".ExercisesActivity.AddExerciseActivity">
         </activity>
         <activity android:name=".ExercisesActivity.ExercisesActivity">

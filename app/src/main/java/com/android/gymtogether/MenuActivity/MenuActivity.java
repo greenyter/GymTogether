@@ -8,6 +8,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.android.gymtogether.ExercisesActivity.ExercisesActivity;
+import com.android.gymtogether.ExercisesActivity.PopUpAddExerciseActivity;
 import com.android.gymtogether.LoginGoogleActivity.LoginGoogleActivity;
 import com.android.gymtogether.model.User;
 import com.android.gymtogether.MenuActivity.presenter.MenuPresenter;
@@ -93,8 +95,9 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
     }
 
     @Override
-    public void goToAddTrainingActivity() {
-        
+    public void goToAddTrainingActivity(View view) {
+        Intent intent = new Intent(this, ExercisesActivity.class);
+        startActivity(intent);
     }
 
 

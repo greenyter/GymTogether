@@ -60,9 +60,4 @@ public class LoginGoogleActivity extends AppCompatActivity implements LoginGoogl
        startActivity(intent);
     }
 
-    //testowo
-    public void launchTrainning(View v){
-        Intent i = new Intent(this, ExercisesActivity.class);
-        startActivity(i);
-    }
 }

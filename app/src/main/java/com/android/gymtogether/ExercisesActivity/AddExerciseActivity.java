@@ -1,9 +1,14 @@
 package com.android.gymtogether.ExercisesActivity;
 
+<<<<<<< Updated upstream
 import android.content.Intent;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+=======
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+>>>>>>> Stashed changes
 import com.android.gymtogether.R;
 
 public class AddExerciseActivity extends AppCompatActivity {
@@ -15,12 +20,5 @@ public class AddExerciseActivity extends AppCompatActivity {
 
     }
 
-    public void launchHeadExercise(View v) {
-        Intent i = new Intent(this, HeadExercisesActivity.class);
-        startActivity(i);
-    }
-    public void launchChestExercise(View v) {
-        Intent i = new Intent(this, ChestExercisesActivity.class);
-        startActivity(i);
-    }
+
 }
