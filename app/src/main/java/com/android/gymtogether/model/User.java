@@ -1,4 +1,4 @@
-package com.android.gymtogether.LoginGoogleActivity.model;
+package com.android.gymtogether.model;
 
 import android.net.Uri;
 import android.os.Parcel;

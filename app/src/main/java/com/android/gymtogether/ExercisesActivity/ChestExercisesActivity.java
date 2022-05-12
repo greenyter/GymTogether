@@ -8,7 +8,7 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import com.android.gymtogether.ExercisesActivity.model.Exercise;
+import com.android.gymtogether.model.Exercise;
 import com.android.gymtogether.R;
 
 public class ChestExercisesActivity extends AppCompatActivity {

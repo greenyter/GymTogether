@@ -1,13 +1,12 @@
 package com.android.gymtogether.LoginGoogleActivity;
 
 import android.content.Intent;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.android.gymtogether.ExercisesActivity.ExercisesActivity;
-import com.android.gymtogether.LoginGoogleActivity.model.User;
+import com.android.gymtogether.model.User;
 import com.android.gymtogether.LoginGoogleActivity.presenter.LoginGooglePresenter;
 import com.android.gymtogether.LoginGoogleActivity.presenter.LoginGooglePresenterImpl;
 import com.android.gymtogether.LoginGoogleActivity.view.LoginGoogleView;

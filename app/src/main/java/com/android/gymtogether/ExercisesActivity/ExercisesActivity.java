@@ -6,10 +6,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import com.android.gymtogether.ExercisesActivity.model.Exercise;
 import com.android.gymtogether.R;
 
-import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 

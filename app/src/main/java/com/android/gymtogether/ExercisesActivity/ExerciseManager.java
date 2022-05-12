@@ -1,6 +1,6 @@
 package com.android.gymtogether.ExercisesActivity;
 
-import com.android.gymtogether.ExercisesActivity.model.Exercise;
+import com.android.gymtogether.model.Exercise;
 
 import java.util.ArrayList;
 import java.util.Observable;

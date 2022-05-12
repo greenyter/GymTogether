@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.android.gymtogether.LoginGoogleActivity.LoginGoogleActivity;
-import com.android.gymtogether.LoginGoogleActivity.model.User;
+import com.android.gymtogether.model.User;
 import com.android.gymtogether.MenuActivity.presenter.MenuPresenter;
 import com.android.gymtogether.MenuActivity.presenter.MenuPresenterImpl;
 import com.android.gymtogether.MenuActivity.view.MenuView;

@@ -2,15 +2,9 @@ package com.android.gymtogether.ExercisesActivity;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import com.android.gymtogether.ExercisesActivity.model.Exercise;
 import com.android.gymtogether.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class AddExerciseActivity extends AppCompatActivity {
 

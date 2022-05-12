@@ -1,4 +1,4 @@
-package com.android.gymtogether.ExercisesActivity.model;
+package com.android.gymtogether.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

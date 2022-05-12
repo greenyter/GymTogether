@@ -2,18 +2,10 @@ package com.android.gymtogether.MenuActivity.presenter;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.StrictMode;
 import android.util.Log;
-import com.android.gymtogether.LoginGoogleActivity.model.User;
 import com.android.gymtogether.MenuActivity.view.MenuView;
-import com.squareup.picasso.Picasso;
-import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class MenuPresenterImpl implements MenuPresenter{
