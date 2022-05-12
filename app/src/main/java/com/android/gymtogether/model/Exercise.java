@@ -1,15 +1,10 @@
-<<<<<<< Updated upstream:app/src/main/java/com/android/gymtogether/model/Exercise.java
 package com.android.gymtogether.model;
-=======
-package com.android.gymtogether.ExercisesActivity.model;
 import lombok.AllArgsConstructor;
->>>>>>> Stashed changes:app/src/main/java/com/android/gymtogether/ExercisesActivity/model/Exercise.java
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.List;
 
 
 @Getter

@@ -1,24 +1,15 @@
 package com.android.gymtogether.ExercisesActivity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-<<<<<<< Updated upstream
 import com.android.gymtogether.R;
-
-=======
-import com.android.gymtogether.ExercisesActivity.model.Exercise;
-import com.android.gymtogether.MenuActivity.MenuActivity;
-import com.android.gymtogether.R;
+import com.android.gymtogether.model.Exercise;
 
 import java.io.Serializable;
-import java.util.ArrayList;
->>>>>>> Stashed changes
-import java.util.Observable;
-import java.util.Observer;
 
 public class ExercisesActivity extends AppCompatActivity {
 
