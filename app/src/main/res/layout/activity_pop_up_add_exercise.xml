@@ -7,7 +7,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@color/background"
-        tools:context=".ExercicesActivity.PopUpAddExerciceActivity">
+        tools:context=".ExercisesActivity.PopUpAddExerciseActivity">
 
     <TextView
             android:text="Series"
@@ -44,7 +44,7 @@
     <Button
             android:text="Add exercise"
             android:layout_width="140dp"
-            android:layout_height="64dp" android:id="@+id/AddExerciceButton2"
+            android:layout_height="64dp" android:id="@+id/AddExerciseButton2"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="132dp" android:layout_marginEnd="139dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
@@ -67,7 +67,7 @@
             android:ems="10"
             android:id="@+id/editTextSeriesNumber2"
             android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/AddExerciceButton2" android:layout_marginStart="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/AddExerciseButton2" android:layout_marginStart="25dp"
             app:layout_constraintStart_toEndOf="@+id/SeriesView" android:layout_marginEnd="24dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@+id/editTextRepeatNumber" app:layout_constraintHorizontal_bias="0.0"/>

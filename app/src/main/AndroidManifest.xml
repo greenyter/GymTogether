@@ -14,15 +14,15 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.GymTogether"
             android:usesCleartextTraffic="true">
-        <activity android:name=".ExercicesActivity.PopUpAddExerciceActivity">
+        <activity android:name=".ExercisesActivity.PopUpAddExerciseActivity">
         </activity>
-        <activity android:name=".ExercicesActivity.ChestExercicesActivity">
+        <activity android:name=".ExercisesActivity.ChestExercisesActivity">
         </activity>
-        <activity android:name=".ExercicesActivity.HeadExercicesActivity">
+        <activity android:name=".ExercisesActivity.HeadExercisesActivity">
         </activity>
-        <activity android:name=".ExercicesActivity.AddExerciceActivity">
+        <activity android:name=".ExercisesActivity.AddExerciseActivity">
         </activity>
-        <activity android:name=".ExercicesActivity.ExercicesActivity">
+        <activity android:name=".ExercisesActivity.ExercisesActivity">
         </activity>
         <activity android:name=".MenuActivity.MenuActivity">
         </activity>

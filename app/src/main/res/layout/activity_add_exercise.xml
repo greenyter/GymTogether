@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background"
-        tools:context=".ExercicesActivity.AddExerciceActivity">
+        tools:context=".ExercisesActivity.AddExerciseActivity">
     <TextView
             android:text="Chest"
             android:layout_width="90dp"
@@ -27,7 +27,7 @@
             android:layout_marginStart="12dp" android:layout_marginTop="7dp"
             app:layout_constraintTop_toBottomOf="@+id/textViewHead" android:layout_marginEnd="12dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:onClick="launchHeadExercice"/>
+            android:onClick="launchHeadExercise"/>
     <ImageButton
             android:layout_width="393dp"
             android:layout_height="198dp" app:srcCompat="@drawable/body" android:id="@+id/imageButton12"
@@ -36,7 +36,7 @@
             android:layout_marginEnd="9dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="180dp"
-            android:onClick="launchChestExercice"/>
+            android:onClick="launchChestExercise"/>
     <TextView
             android:text="Head"
             android:layout_width="90dp"
