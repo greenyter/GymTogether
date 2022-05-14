@@ -16,7 +16,13 @@
             android:usesCleartextTraffic="true">
         <activity android:name=".UserListActivity.UserListActivity">
         </activity>
-        <activity android:name=".RecommendExercisesActivity.RecommendExercisesActivity">
+        <activity android:name=".ExercisesActivity.TrainingMenuActivity">
+        </activity>
+        <activity android:name=".ExercisesActivity.TrainingActivity">
+        </activity>
+        <activity android:name=".ExercisesActivity.PopUpAddExerciseActivity">
+        </activity>
+        <activity android:name=".ExercisesActivity.ExercisesActivity">
         </activity>
         <activity android:name=".MenuActivity.MenuActivity">
         </activity>

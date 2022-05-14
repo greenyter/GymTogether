@@ -3,14 +3,13 @@ package com.android.gymtogether.LoginGoogleActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import com.android.gymtogether.LoginGoogleActivity.model.User;
 import com.android.gymtogether.LoginGoogleActivity.presenter.LoginGooglePresenter;
 import com.android.gymtogether.LoginGoogleActivity.presenter.LoginGooglePresenterImpl;
 import com.android.gymtogether.LoginGoogleActivity.view.LoginGoogleView;
 import com.android.gymtogether.MenuActivity.MenuActivity;
 import com.android.gymtogether.R;
+import com.android.gymtogether.model.User;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.SignInButton;
@@ -22,8 +21,6 @@ public class LoginGoogleActivity extends AppCompatActivity implements LoginGoogl
 
     private LoginGooglePresenter loginGooglePresenter;
     private SignInButton button;
-    private User user;
-    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,4 +55,5 @@ public class LoginGoogleActivity extends AppCompatActivity implements LoginGoogl
         intent.putExtra("userDetails", (Serializable) user);
        startActivity(intent);
     }
+
 }

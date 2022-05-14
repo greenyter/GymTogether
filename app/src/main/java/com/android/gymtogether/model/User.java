@@ -1,4 +1,4 @@
-package com.android.gymtogether.LoginGoogleActivity.model;
+package com.android.gymtogether.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

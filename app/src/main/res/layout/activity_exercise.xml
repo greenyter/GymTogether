@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="@color/background">
+
+    <TextView
+            android:text="Category"
+            android:layout_width="116dp"
+            android:layout_height="57dp" android:id="@+id/seriesView4"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/seriesTextEdit" android:layout_marginEnd="13dp"
+            app:layout_constraintVertical_bias="0.501" app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+            android:text="Exercise name"
+            android:layout_width="116dp"
+            android:layout_height="54dp" android:id="@+id/repeatView4"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/repeatTextEdit"
+            android:layout_marginEnd="13dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.357"/>
+    <TextView
+            android:text="New exercise"
+            android:layout_width="187dp"
+            android:layout_height="50dp" android:id="@+id/exerciseNameView4"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="86dp" android:layout_marginEnd="104dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="136dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintBottom_toTopOf="@+id/RepeatView"/>
+    <Spinner
+            android:id="@+id/exerciseCategoryDropdowmMenu"
+            android:layout_width="226dp"
+            android:layout_height="59dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/seriesView4" android:layout_marginStart="140dp"/>
+    <Button
+            android:text="Add exercise"
+            android:layout_width="140dp"
+            android:layout_height="64dp" android:id="@+id/addExerciseButton"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="132dp" android:layout_marginEnd="139dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="180dp" app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/seriesTextEdit"
+            android:onClick="setExercise"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/exerciseNameTextEdit"
+            android:layout_marginStart="25dp"
+            app:layout_constraintStart_toEndOf="@+id/SeriesView" android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="20dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.333" android:inputType="text"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

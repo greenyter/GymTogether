@@ -11,7 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.gymtogether.FireBaseDatabase.DatabaseManager;
 import com.android.gymtogether.LoginGoogleActivity.LoginGoogleActivity;
-import com.android.gymtogether.LoginGoogleActivity.model.User;
+import com.android.gymtogether.ExercisesActivity.TrainingActivity;
+import com.android.gymtogether.model.User;
 import com.android.gymtogether.MenuActivity.presenter.MenuPresenter;
 import com.android.gymtogether.MenuActivity.presenter.MenuPresenterImpl;
 import com.android.gymtogether.MenuActivity.view.MenuView;
@@ -100,7 +101,8 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
 
     @Override
     public void goToAddTrainingActivity(View view) {
-        
+        Intent intent = new Intent(this, TrainingActivity.class);
+        startActivity(intent);
     }
 
     @Override

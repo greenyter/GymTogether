@@ -1,15 +1,10 @@
 package com.android.gymtogether.FireBaseDatabase;
 
-import android.os.Debug;
-import android.util.Log;
 import androidx.annotation.NonNull;
-import com.android.gymtogether.LoginGoogleActivity.model.User;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.android.gymtogether.model.User;
 import com.google.firebase.database.*;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 

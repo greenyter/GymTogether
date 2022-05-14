@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ExercisesActivity.TrainingMenuActivity" android:background="@color/background">
+
+    <Button
+            android:text="ADD NEW EXERCISE"
+            android:layout_width="186dp"
+            android:layout_height="68dp" android:id="@+id/addNewExerciseButton"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="180dp"
+            app:layout_constraintHorizontal_bias="0.497"/>
+    <Button
+            android:text="FINISH TRAINING"
+            android:layout_width="186dp"
+            android:layout_height="74dp" android:id="@+id/finishButton"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="376dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
