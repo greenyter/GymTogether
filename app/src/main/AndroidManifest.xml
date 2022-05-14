@@ -14,9 +14,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.GymTogether"
             android:usesCleartextTraffic="true">
-        <activity android:name=".ExercisesActivity.PopUpAddExerciseActivity">
+        <activity android:name=".ExercisesActivity.TrainingMenuActivity">
         </activity>
-        <activity android:name=".ExercisesActivity.AddExerciseActivity">
+        <activity android:name=".ExercisesActivity.TrainingActivity">
+        </activity>
+        <activity android:name=".ExercisesActivity.PopUpAddExerciseActivity">
         </activity>
         <activity android:name=".ExercisesActivity.ExercisesActivity">
         </activity>

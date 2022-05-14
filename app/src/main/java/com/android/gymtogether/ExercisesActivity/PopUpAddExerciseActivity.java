@@ -1,6 +1,6 @@
 package com.android.gymtogether.ExercisesActivity;
 
-import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -8,10 +8,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import com.android.gymtogether.ExercisesActivity.model.Exercise;
-import com.android.gymtogether.LoginGoogleActivity.model.User;
 import com.android.gymtogether.R;
+import com.android.gymtogether.model.Exercise;
 
 public class PopUpAddExerciseActivity extends AppCompatActivity {
 

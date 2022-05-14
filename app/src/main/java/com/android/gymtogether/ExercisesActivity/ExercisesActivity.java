@@ -8,6 +8,7 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.gymtogether.R;
 import com.android.gymtogether.model.Exercise;
+import com.android.gymtogether.model.Training;
 
 import java.io.Serializable;
 
@@ -17,12 +18,14 @@ public class ExercisesActivity extends AppCompatActivity {
     private EditText exerciseNameTextEdit;
     private Spinner exerciseCategoryMenu;
     private Exercise exercise;
+    private Training training;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
-
+        Bundle bundle = getIntent().getExtras();
+        training = (Training) bundle.get("training");
         init();
 
     }
@@ -45,6 +48,8 @@ public class ExercisesActivity extends AppCompatActivity {
 
             exercise.setExerciseName(exerciseNameTextEdit.getText().toString());
             exercise.setExerciseCategory(exerciseCategoryMenu.getSelectedItem().toString());
+            training.addExercise(exercise);
+            Log.d("trainings",training.getExercises().get(0).getExerciseName());
             goToDetailsExercise();
 
 

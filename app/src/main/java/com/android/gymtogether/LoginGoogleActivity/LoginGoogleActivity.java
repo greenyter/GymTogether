@@ -23,8 +23,6 @@ public class LoginGoogleActivity extends AppCompatActivity implements LoginGoogl
 
     private LoginGooglePresenter loginGooglePresenter;
     private SignInButton button;
-    private User user;
-    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
