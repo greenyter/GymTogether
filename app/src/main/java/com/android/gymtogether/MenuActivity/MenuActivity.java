@@ -2,12 +2,14 @@ package com.android.gymtogether.MenuActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
+import com.android.gymtogether.FireBaseDatabase.DatabaseManager;
 import com.android.gymtogether.LoginGoogleActivity.LoginGoogleActivity;
 import com.android.gymtogether.ExercisesActivity.TrainingActivity;
 import com.android.gymtogether.model.User;
@@ -29,6 +31,7 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
     private GoogleSignInClient mGoogleSignInClient;
     private Intent intent;
     private TextView details;
+    private Button toAddTrainingActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,9 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
 
         menuPresenter.convertUriToImage(user.getPhotoUrl());
         menuPresenter.getDetailsUser(userDetails);
+
+        DatabaseManager databaseManager = new DatabaseManager();
+        databaseManager.addUser(user);
 
     }
 
@@ -99,5 +105,8 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
         startActivity(intent);
     }
 
+    @Override
+    public void onBackPressed() {
 
+    }
 }

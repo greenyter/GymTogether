@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RecommendExercisesActivity.RecommendExercisesActivity"
+        android:background="@color/background">
+    <Button
+            android:text="SHOULDERS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/shouldersButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.248"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="148dp" android:onClick="showExercise"/>
+    <Button
+            android:text="STOMACH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/stomachButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="156dp" app:layout_constraintVertical_bias="0.497"
+            android:onClick="showExercise"/>
+    <Button
+            android:text="CHEST"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintVertical_bias="0.366" android:id="@+id/chestButton" android:onClick="showExercise"/>
+    <Button
+            android:text="LEGS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/legsButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="160dp" app:layout_constraintVertical_bias="0.613"
+            android:onClick="showExercise"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="409dp"
+            android:layout_height="206dp" android:id="@+id/exerciseText"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.4" app:layout_constraintVertical_bias="0.996"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

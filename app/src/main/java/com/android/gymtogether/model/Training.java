@@ -20,6 +20,6 @@ public class Training implements Serializable {
     public void addExercise(Exercise exercise){
         exercises.add(exercise);
     }
-    
+
 
 }
