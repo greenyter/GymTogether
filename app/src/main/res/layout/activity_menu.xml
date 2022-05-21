@@ -32,12 +32,26 @@
             app:layout_constraintBottom_toBottomOf="@+id/profile_image" app:layout_constraintVertical_bias="0.0"
             android:fontFamily="sans-serif-black" android:textSize="14sp" android:textColor="#CAC3C3"/>
     <Button
+            android:text="COMPARE TWO TRAININGS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/toCompareTrainings"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.497"
+            android:layout_marginBottom="264dp" android:onClick="goToAddTrainingActivity"/>
+    <Button
             android:text="ADD NEW TRAINING"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/toAddTrainingActivity"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.12"
-            android:layout_marginBottom="400dp" android:onClick="goToAddTrainingActivity"/>
+            android:layout_marginBottom="324dp" android:onClick="goToAddTrainingActivity"/>
+    <Button
+            android:text="CHECK ALL USERS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/toUserList"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.857"
+            android:layout_marginBottom="324dp" android:onClick="goToUserList"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,12 +1,17 @@
 package com.android.gymtogether.FireBaseDatabase;
 
+import android.content.Context;
 import android.util.Log;
 import androidx.annotation.NonNull;
 import com.android.gymtogether.model.Training;
 import com.android.gymtogether.model.User;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.*;
 
+import java.time.LocalDate;
 import java.util.*;
 
 
@@ -14,39 +19,26 @@ public class DatabaseManager {
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    private GoogleSignInAccount googleSignInAccount;
 
-    public DatabaseManager(){
+    public DatabaseManager(Context context) {
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        googleSignInAccount = GoogleSignIn.getLastSignedInAccount(context);
+    }
+
+    public DatabaseManager() {
         firebaseDatabase = FirebaseDatabase.getInstance();
     }
 
-    public void addUser(User user){
-        Query query= firebaseDatabase.getReference().child("users").orderByChild("email").equalTo(user.getEmail());
-       query.addListenerForSingleValueEvent(new ValueEventListener(){
-           @Override
-           public void onDataChange(@NonNull DataSnapshot snapshot) {
-               if(!snapshot.exists()){
-                   databaseReference = firebaseDatabase.getReference().child("users").push();
-                   databaseReference.setValue(user);
-               }
-           }
-
-           @Override
-           public void onCancelled(@NonNull DatabaseError error) {
-
-           }
-       });
-    }
-
-    public void addTraining(Training training,User user){
-        Query query= firebaseDatabase.getReference().ch.orderByChild("email").equalTo(user.getEmail());
-        query.addListenerForSingleValueEvent(new ValueEventListener(){
+    public void addUser(User user) {
+        Query query = firebaseDatabase.getReference().child("users").orderByChild("email").equalTo(user.getEmail());
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Map<String,Object> values = new HashMap<String,Object>();
-                values.put("a", training.getDate());
-                values.put("n", training.getExercises().get(0).getExerciseName());
-                databaseReference.child("users").child("training").updateChildren(values);
-
+                if (!snapshot.exists()) {
+                    databaseReference = firebaseDatabase.getReference().child("users").push();
+                    databaseReference.setValue(user);
+                }
             }
 
             @Override
@@ -56,7 +48,49 @@ public class DatabaseManager {
         });
     }
 
-    public void getUsersFromDatabase(MyCallback myCallback){
+    public void addTraining(Training training, Context context) {
+
+        Query query = firebaseDatabase.getReference().child("training");
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                databaseReference = firebaseDatabase.getReference().child("training").push();
+                training.setEmailUser(googleSignInAccount.getEmail());
+                databaseReference.setValue(training);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void getTraining(MyCallback myCallback, LocalDate localDate){
+        Query query = firebaseDatabase.getReference().child("training").orderByChild("emailUser").equalTo(googleSignInAccount.getEmail());
+        final Training[] getTrainingRes = {new Training()};
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnap : dataSnapshot.getChildren()) {
+                    Training training = dataSnap.getValue(Training.class);
+                    if(training.getDate().equals(localDate.toString())) {
+                        getTrainingRes[0] = training;
+                        myCallback.onCallback(getTrainingRes[0]);
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    public void getUsersFromDatabase(MyCallback myCallback) {
         List<User> listUser = new ArrayList<>();
         firebaseDatabase
                 .getReference()
@@ -82,6 +116,7 @@ public class DatabaseManager {
 
     public interface MyCallback {
         void onCallback(List<User> value);
+        void onCallback(Training training);
     }
 
 }

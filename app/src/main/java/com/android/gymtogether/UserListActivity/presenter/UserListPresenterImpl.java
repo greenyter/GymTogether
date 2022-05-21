@@ -2,8 +2,10 @@ package com.android.gymtogether.UserListActivity.presenter;
 
 import com.android.gymtogether.FireBaseDatabase.DatabaseManager;
 import com.android.gymtogether.UserListActivity.view.UserListView;
+import com.android.gymtogether.model.Training;
 import com.android.gymtogether.model.User;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -25,6 +27,13 @@ public class UserListPresenterImpl implements UserListPresenter{
             public void onCallback(List<User> value) {
                 userListView.setUser(value);
             }
+
+            @Override
+            public void onCallback(Training training) {
+
+            }
+
+
         });
 
 

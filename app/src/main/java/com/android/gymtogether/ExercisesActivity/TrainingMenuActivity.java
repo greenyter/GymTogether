@@ -16,6 +16,9 @@ import com.android.gymtogether.tool.JSONMapper;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.time.LocalDate;
+import java.util.List;
+
 public class TrainingMenuActivity extends AppCompatActivity {
 
     private Button addNewExerciseButton;
@@ -51,6 +54,7 @@ public class TrainingMenuActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MenuActivity.class);
         intent.putExtra("training",training);
         startActivity(intent);
+
 
     }
 

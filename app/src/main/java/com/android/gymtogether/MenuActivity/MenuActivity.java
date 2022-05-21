@@ -14,6 +14,7 @@ import com.android.gymtogether.ExercisesActivity.TrainingMenuActivity;
 import com.android.gymtogether.FireBaseDatabase.DatabaseManager;
 import com.android.gymtogether.LoginGoogleActivity.LoginGoogleActivity;
 import com.android.gymtogether.ExercisesActivity.TrainingActivity;
+import com.android.gymtogether.UserListActivity.UserListActivity;
 import com.android.gymtogether.model.Training;
 import com.android.gymtogether.model.User;
 import com.android.gymtogether.MenuActivity.presenter.MenuPresenter;
@@ -27,6 +28,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import de.hdodenhof.circleimageview.CircleImageView;
+
+import java.time.LocalDate;
+import java.util.List;
 
 import static android.app.PendingIntent.getActivity;
 
@@ -63,11 +67,25 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
         menuPresenter.convertUriToImage(user.getPhotoUrl());
         menuPresenter.getDetailsUser(userDetails);
 
-        DatabaseManager databaseManager = new DatabaseManager();
+        DatabaseManager databaseManager = new DatabaseManager(this);
         databaseManager.addUser(user);
         if(training!= null){
-            databaseManager.addTraining(training,user);
+            databaseManager.addTraining(training,this);
         }
+        DatabaseManager databaseManager1 = new DatabaseManager(this);
+        databaseManager1.getTraining(new DatabaseManager.MyCallback() {
+            @Override
+            public void onCallback(List<User> value) {
+
+            }
+
+            @Override
+            public void onCallback(Training training) {
+                if(training != null)
+                Log.d("getTra",training.toString());
+            }
+        }, LocalDate.of(2022,4,20));
+
 
     }
 
@@ -85,6 +103,16 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
 
                     });
 
+    }
+
+    public void goToUserList(View view){
+        Intent intent = new Intent(this, UserListActivity.class);
+        startActivity(intent);
+    }
+
+    private void goToCompareTwoTrainings(View view){
+        //Intent intent = new Intent(this, UserListActivity.class);
+       // startActivity(intent);
     }
 
 

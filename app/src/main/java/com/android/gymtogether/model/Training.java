@@ -15,11 +15,13 @@ import java.util.List;
 public class Training implements Serializable {
 
     private List<Exercise> exercises = new ArrayList<>();
-    private LocalDate date;
+    private String date;
+    private String emailUser;
 
     public void addExercise(Exercise exercise){
         exercises.add(exercise);
     }
+
 
 
 }

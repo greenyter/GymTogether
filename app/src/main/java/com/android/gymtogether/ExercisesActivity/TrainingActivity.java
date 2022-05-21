@@ -40,7 +40,7 @@ public class TrainingActivity extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 training = new Training();
-                training.setDate(LocalDate.of(year,month,dayOfMonth));
+                training.setDate(LocalDate.of(year,month,dayOfMonth).toString());
                 goToNextAct.setVisibility(View.VISIBLE);
             }
         });
