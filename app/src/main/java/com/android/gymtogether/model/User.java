@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 @Getter
@@ -20,6 +21,8 @@ public class User implements Serializable {
     private String name;
 
     private String photoUrl;
+
+
 
 
 }

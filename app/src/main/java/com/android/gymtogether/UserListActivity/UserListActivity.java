@@ -1,15 +1,13 @@
 package com.android.gymtogether.UserListActivity;
 
-import android.util.Log;
-import android.widget.ArrayAdapter;
+import android.os.Bundle;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import com.android.gymtogether.FireBaseDatabase.DatabaseManager;
-import com.android.gymtogether.LoginGoogleActivity.model.User;
+
 import com.android.gymtogether.R;
 import com.android.gymtogether.UserListActivity.presenter.UserListPresenterImpl;
 import com.android.gymtogether.UserListActivity.view.UserListView;
+import com.android.gymtogether.model.User;
 
 import java.util.List;
 

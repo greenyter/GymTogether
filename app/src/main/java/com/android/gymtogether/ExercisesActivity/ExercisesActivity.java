@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.android.gymtogether.R;
 import com.android.gymtogether.model.Exercise;
 import com.android.gymtogether.model.Training;
+import com.android.gymtogether.tool.JSONMapper;
 
 import java.io.Serializable;
 
@@ -48,8 +49,7 @@ public class ExercisesActivity extends AppCompatActivity {
 
             exercise.setExerciseName(exerciseNameTextEdit.getText().toString());
             exercise.setExerciseCategory(exerciseCategoryMenu.getSelectedItem().toString());
-            training.addExercise(exercise);
-            Log.d("trainings",training.getExercises().get(0).getExerciseName());
+
             goToDetailsExercise();
 
 
@@ -71,6 +71,7 @@ public class ExercisesActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PopUpAddExerciseActivity.class);
         Log.d("exercise",exercise.toString());
         intent.putExtra("exercise", (Serializable) exercise);
+        intent.putExtra("training",training);
         startActivity(intent);
     }
 

@@ -1,5 +1,6 @@
 package com.android.gymtogether.ExercisesActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.gymtogether.R;
 import com.android.gymtogether.model.Exercise;
+import com.android.gymtogether.model.Training;
 
 public class PopUpAddExerciseActivity extends AppCompatActivity {
 
@@ -19,12 +21,14 @@ public class PopUpAddExerciseActivity extends AppCompatActivity {
     private EditText seriesTextEdit;
     private EditText weightTextEdit;
     private Button addDetailsExerciseButton;
+    private Training training;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_up_add_exercise);
-
+        Bundle bundle = getIntent().getExtras();
+        training = (Training) bundle.get("training");
         init();
     }
 
@@ -50,7 +54,13 @@ public class PopUpAddExerciseActivity extends AppCompatActivity {
             exercise.setRepeatNumber(Integer.parseInt(repeatTextEdit.getText().toString()));
             exercise.setSeriesNumber(Integer.parseInt(seriesTextEdit.getText().toString()));
             exercise.setWeight(Integer.parseInt(weightTextEdit.getText().toString()));
-            Log.d("exerciseDetails",exercise.toString());
+            training.addExercise(exercise);
+
+            Log.d("trainingDate",training.getDate().toString());
+            Intent intent = new Intent(this,TrainingMenuActivity.class);
+            intent.putExtra("training",(Training) training);
+            startActivity(intent);
+
             
     }
 

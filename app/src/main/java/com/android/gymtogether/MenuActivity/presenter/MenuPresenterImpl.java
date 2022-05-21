@@ -4,7 +4,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.StrictMode;
 import android.util.Log;
+import com.android.gymtogether.FireBaseDatabase.DatabaseManager;
 import com.android.gymtogether.MenuActivity.view.MenuView;
+import com.android.gymtogether.model.Training;
+import com.android.gymtogether.model.User;
 import com.android.gymtogether.tool.ImageConverter;
 
 import java.net.URL;
@@ -34,5 +37,6 @@ public class MenuPresenterImpl implements MenuPresenter{
             e.printStackTrace();
         }
     }
+
 
 }

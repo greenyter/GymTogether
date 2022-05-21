@@ -41,13 +41,13 @@ public class TrainingActivity extends AppCompatActivity {
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 training = new Training();
                 training.setDate(LocalDate.of(year,month,dayOfMonth));
-                intent.putExtra("training",(Training) training);
                 goToNextAct.setVisibility(View.VISIBLE);
             }
         });
     }
 
     public void goToExerciseActivity(View view){
+        intent.putExtra("training",(Training) training);
         startActivity(intent);
     }
 }

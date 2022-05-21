@@ -1,12 +1,11 @@
 package com.android.gymtogether.UserListActivity.presenter;
 
-import android.util.Log;
 import com.android.gymtogether.FireBaseDatabase.DatabaseManager;
-import com.android.gymtogether.LoginGoogleActivity.model.User;
 import com.android.gymtogether.UserListActivity.view.UserListView;
+import com.android.gymtogether.model.User;
 
-import java.util.ArrayList;
 import java.util.List;
+
 
 public class UserListPresenterImpl implements UserListPresenter{
 

@@ -2,15 +2,13 @@ package com.android.gymtogether.UserListActivity;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
-import com.android.gymtogether.LoginGoogleActivity.model.User;
 import com.android.gymtogether.R;
+import com.android.gymtogether.model.User;
 import com.android.gymtogether.tool.ImageConverter;
 import de.hdodenhof.circleimageview.CircleImageView;
 

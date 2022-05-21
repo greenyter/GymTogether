@@ -3,26 +3,32 @@ package com.android.gymtogether.MenuActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import com.android.gymtogether.ExercisesActivity.TrainingMenuActivity;
 import com.android.gymtogether.FireBaseDatabase.DatabaseManager;
 import com.android.gymtogether.LoginGoogleActivity.LoginGoogleActivity;
 import com.android.gymtogether.ExercisesActivity.TrainingActivity;
+import com.android.gymtogether.model.Training;
 import com.android.gymtogether.model.User;
 import com.android.gymtogether.MenuActivity.presenter.MenuPresenter;
 import com.android.gymtogether.MenuActivity.presenter.MenuPresenterImpl;
 import com.android.gymtogether.MenuActivity.view.MenuView;
 import com.android.gymtogether.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import de.hdodenhof.circleimageview.CircleImageView;
+
+import static android.app.PendingIntent.getActivity;
 
 public class MenuActivity extends AppCompatActivity implements MenuView {
 
@@ -32,23 +38,36 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
     private Intent intent;
     private TextView details;
     private Button toAddTrainingActivity;
+    private Training training;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         Bundle bundle = getIntent().getExtras();
-        User user = (User) bundle.get("userDetails");
+        training = (Training) bundle.get("training");
         menuPresenter = new MenuPresenterImpl(this);
         initControllers();
+        User user = new User();
 
-        String userDetails = String.format("Name: %s\nemail: %s",
+        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+
+        user.setEmail(acct.getEmail());
+        user.setName(acct.getDisplayName());
+        user.setPhotoUrl(acct.getPhotoUrl().toString());
+
+        String  userDetails = String.format("Name: %s\nemail: %s",
                                             user.getName(),user.getEmail());
+
+
 
         menuPresenter.convertUriToImage(user.getPhotoUrl());
         menuPresenter.getDetailsUser(userDetails);
 
         DatabaseManager databaseManager = new DatabaseManager();
         databaseManager.addUser(user);
+        if(training!= null){
+            databaseManager.addTraining(training,user);
+        }
 
     }
 

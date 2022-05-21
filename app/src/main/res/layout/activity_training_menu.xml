@@ -12,13 +12,15 @@
             android:layout_width="186dp"
             android:layout_height="68dp" android:id="@+id/addNewExerciseButton"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="180dp"
-            app:layout_constraintHorizontal_bias="0.497"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.497" android:layout_marginTop="140dp"
+            android:onClick="addExerciseActivity"/>
     <Button
             android:text="FINISH TRAINING"
             android:layout_width="186dp"
             android:layout_height="74dp" android:id="@+id/finishButton"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="376dp"/>
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.424"
+            android:onClick="finishAddingExercise"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

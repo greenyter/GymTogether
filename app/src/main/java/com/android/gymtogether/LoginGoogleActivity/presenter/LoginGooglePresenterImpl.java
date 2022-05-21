@@ -13,6 +13,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
 import java.util.Objects;
+import java.util.Random;
 
 import static androidx.constraintlayout.widget.ConstraintLayoutStates.TAG;
 
@@ -43,6 +44,7 @@ public class LoginGooglePresenterImpl implements  LoginGooglePresenter{
 
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            Random random = new Random();
             user.setName(account.getDisplayName());
             user.setEmail(account.getEmail());
             user.setPhotoUrl(Objects.requireNonNull(account.getPhotoUrl()).toString());
