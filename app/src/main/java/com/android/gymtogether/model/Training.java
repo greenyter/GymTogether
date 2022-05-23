@@ -12,6 +12,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Training implements Serializable {
 
     private List<Exercise> exercises = new ArrayList<>();
