@@ -12,7 +12,6 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class Training implements Serializable {
 
     private List<Exercise> exercises = new ArrayList<>();
@@ -21,6 +20,14 @@ public class Training implements Serializable {
 
     public void addExercise(Exercise exercise){
         exercises.add(exercise);
+    }
+
+    @Override
+    public String toString(){
+        String print =
+                String.format("Date: %s\nExercises: %s\n", date,exercises.toString());
+
+        return print;
     }
 
 

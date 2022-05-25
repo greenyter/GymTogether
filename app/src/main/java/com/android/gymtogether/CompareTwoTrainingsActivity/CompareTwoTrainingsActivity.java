@@ -18,8 +18,8 @@ public class CompareTwoTrainingsActivity extends AppCompatActivity {
 
     private TextView firstTraining;
     private TextView secondTraining;
-    private LocalDate firstDate;
-    private LocalDate secondDate;
+    private Training firstDate;
+    private Training secondDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +27,8 @@ public class CompareTwoTrainingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_compare_two_trainings);
 
         Bundle bundle = getIntent().getExtras();
-        firstDate = (LocalDate) bundle.get("firstDate");
-        secondDate = (LocalDate) bundle.get("secondDate");
+        firstDate = (Training) bundle.get("firstTrainingCal");
+        secondDate = (Training) bundle.get("secondTrainingCal");
 
         init();
         setTexts();
@@ -41,33 +41,8 @@ public class CompareTwoTrainingsActivity extends AppCompatActivity {
     }
 
     private void setTexts(){
-        DatabaseManager databaseManager = new DatabaseManager(this);
-
-        databaseManager.getTraining(new DatabaseManager.MyCallback() {
-            @Override
-            public void onCallback(List<User> value) {
-
-            }
-
-            @Override
-            public void onCallback(Training training) {
-                if(training != null)
-                    firstTraining.setText(training.toString());
-            }
-        }, firstDate);
-
-        databaseManager.getTraining(new DatabaseManager.MyCallback() {
-            @Override
-            public void onCallback(List<User> value) {
-
-            }
-
-            @Override
-            public void onCallback(Training training) {
-                if(training != null)
-                    secondTraining.setText(training.toString());
-            }
-        }, secondDate);
+      firstTraining.setText(firstDate.toString());
+      secondTraining.setText(secondDate.toString());
     }
 
     @Override

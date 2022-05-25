@@ -20,10 +20,9 @@ public class JSONMapperTest {
 
         Training training = new Training();
         training.addExercise(exercise);
-        training.setDate(LocalDate.of(2000, 2, 20));
+        training.setDate(LocalDate.of(2000, 2, 20).toString());
         //when
         String result = exerciseJSONMapper.convertToJSON(training);
-        System.out.println(result);
 
         //then
         assertThat("No day of month", result.contains("20"));
@@ -48,7 +47,7 @@ public class JSONMapperTest {
 
         Training training = new Training();
         training.addExercise(exercise);
-        training.setDate(LocalDate.of(2000, 2, 20));
+        training.setDate(LocalDate.of(2000, 2, 20).toString());
         String stringJson = toJson.convertToJSON(training);
 
         //when
@@ -56,9 +55,9 @@ public class JSONMapperTest {
         Training result = trainingJSONMapper.convertFromJSON(stringJson,Training.class);
 
         //then
-        assertThat(result.getDate().getDayOfMonth(), equalTo(20));
-        assertThat(result.getDate().getMonth().getValue(), equalTo(2));
-        assertThat(result.getDate().getYear(), equalTo(2000));
+        assertThat("No day", result.getDate().contains("20"));
+        assertThat("No month", result.getDate().contains("2"));
+        assertThat("No year", result.getDate().contains("2000"));
 
         assertThat(training.getExercises().size(), equalTo(1));
         Exercise exResult = training.getExercises().get(0);

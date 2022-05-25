@@ -15,7 +15,7 @@
             app:civ_border_color="#FF000000" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.831"
-            app:layout_constraintVertical_bias="0.025"/>
+            app:layout_constraintVertical_bias="0.025" android:onClick="goToUserDetails"/>
     <Button
             android:text="LOGOUT"
             android:layout_width="100dp"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content" android:id="@+id/toCompareTrainings"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.497"
-            android:layout_marginBottom="264dp" android:onClick="goToAddTrainingActivity"/>
+            android:layout_marginBottom="264dp" android:onClick="goToCompareTwoTrainings"/>
     <Button
             android:text="ADD NEW TRAINING"
             android:layout_width="wrap_content"

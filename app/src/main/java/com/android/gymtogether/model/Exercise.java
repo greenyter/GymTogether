@@ -22,11 +22,11 @@ public class Exercise implements Serializable {
 
     @Override
     public String toString(){
-        return " Exercise name - " + exerciseName +
-                " | Exercise category - " + exerciseCategory +
-                " | Repeat number - " + repeatNumber +
-                " | Series number - " + seriesNumber +
-                " | Weight - " + weight;
+        return String.format(" \nExercise name - %s\n" +
+                " | Exercise category - %s\n" +
+                " | Repeat number - %d\n" +
+                " | Series number - %d\n" +
+                " | Weight - %d\n", exerciseName,exerciseCategory,repeatNumber,seriesNumber,weight);
     }
     
     

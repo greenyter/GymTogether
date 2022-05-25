@@ -5,6 +5,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import com.android.gymtogether.model.Training;
 import com.android.gymtogether.model.User;
+import com.android.gymtogether.model.UserInfo;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -66,7 +67,48 @@ public class DatabaseManager {
         });
     }
 
-    public void getTraining(MyCallback myCallback, LocalDate localDate){
+    public void addUserInfo(UserInfo info){
+        Query query = firebaseDatabase.getReference().child("info");
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                databaseReference = firebaseDatabase.getReference().child("info").push();
+                info.setUserEmail(googleSignInAccount.getEmail());
+                databaseReference.setValue(info);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void getUserInfo(UserInfoCallback myCallback){
+        List<UserInfo> userInfos = new ArrayList<>();
+        firebaseDatabase
+                .getReference()
+                .child("info")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        for (DataSnapshot dataSnap : dataSnapshot.getChildren()) {
+                            UserInfo userInfo = dataSnap.getValue(UserInfo.class);
+                            userInfos.add(userInfo);
+                            Log.d("userInfor",userInfo.getUserInfo());
+                        }
+                        myCallback.onCallback(userInfos);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+    }
+
+    public void getTraining(TrainingCallback myCallback, LocalDate localDate){
         Query query = firebaseDatabase.getReference().child("training").orderByChild("emailUser").equalTo(googleSignInAccount.getEmail());
         final Training[] getTrainingRes = {new Training()};
         query.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -90,7 +132,7 @@ public class DatabaseManager {
 
     }
 
-    public void getUsersFromDatabase(MyCallback myCallback) {
+    public void getUsersFromDatabase(ListUserCallback myCallback) {
         List<User> listUser = new ArrayList<>();
         firebaseDatabase
                 .getReference()
@@ -114,9 +156,16 @@ public class DatabaseManager {
     }
 
 
-    public interface MyCallback {
+    public interface ListUserCallback {
         void onCallback(List<User> value);
+    }
+
+    public interface TrainingCallback{
         void onCallback(Training training);
+    }
+
+    public interface UserInfoCallback{
+        void onCallback(List<UserInfo> userInfo);
     }
 
 }

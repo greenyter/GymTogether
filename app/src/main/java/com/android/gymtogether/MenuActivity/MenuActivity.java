@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import com.android.gymtogether.AddInfoAboutUserSelfActivity.AddInfoAboutUserSelfActivity;
+import com.android.gymtogether.CompareTwoTrainingsActivity.FirstDateActivity;
 import com.android.gymtogether.ExercisesActivity.TrainingMenuActivity;
 import com.android.gymtogether.FireBaseDatabase.DatabaseManager;
 import com.android.gymtogether.LoginGoogleActivity.LoginGoogleActivity;
@@ -48,7 +50,11 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         Bundle bundle = getIntent().getExtras();
-        training = (Training) bundle.get("training");
+        try {
+            training = (Training) bundle.get("training");
+        }catch (NullPointerException e){
+            Log.d("nullTraining","Null training bundle");
+        }
         menuPresenter = new MenuPresenterImpl(this);
         initControllers();
         User user = new User();
@@ -72,20 +78,6 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
         if(training!= null){
             databaseManager.addTraining(training,this);
         }
-        DatabaseManager databaseManager1 = new DatabaseManager(this);
-        databaseManager1.getTraining(new DatabaseManager.MyCallback() {
-            @Override
-            public void onCallback(List<User> value) {
-
-            }
-
-            @Override
-            public void onCallback(Training training) {
-                if(training != null)
-                Log.d("getTra",training.toString());
-            }
-        }, LocalDate.of(2022,4,20));
-
 
     }
 
@@ -110,9 +102,14 @@ public class MenuActivity extends AppCompatActivity implements MenuView {
         startActivity(intent);
     }
 
-    private void goToCompareTwoTrainings(View view){
-        //Intent intent = new Intent(this, UserListActivity.class);
-       // startActivity(intent);
+    public void goToUserDetails(View view){
+        Intent intent = new Intent(this, AddInfoAboutUserSelfActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToCompareTwoTrainings(View view){
+        Intent intent = new Intent(this, FirstDateActivity.class);
+        startActivity(intent);
     }
 
 
